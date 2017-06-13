@@ -1,6 +1,6 @@
 FROM openjdk:8-jdk
 
-ARG KOTLIN_NATIVE_VERSION=master
+ARG KOTLIN_NATIVE_VERSION=v0.2.0
 
 RUN apt-get update && apt-get install -yq \
         libncurses-dev && \

@@ -8,6 +8,7 @@ This Project is an Ubuntu based container to compile kotlin native applications.
 ## Currently supported versions
 Following branches and tags are supported.
 * v0.2.0
+
 each other tag/branch might or might not work.
 
 ## HowTo
@@ -22,6 +23,7 @@ git remote add -f origin https://github.com/JetBrains/kotlin-native.git && \
 echo "samples/*" > .git/info/sparse-checkout && \
 git checkout v0.2.0 # use other branch/tag if needed
 ```
+
 2. Compile your first sample  
 Run the following command to install the needed dependency inside the docker container and then run the build of the kotlin native curl sample.  
 ```bash
@@ -38,4 +40,5 @@ Just try it out:
 ```bash
 ./samples/libcourl/Curl.kexe
 ```
+
 As your newly built version of curl requires libcurl-openssl it obviously has to be installed on the system where you are trying to run the binary.

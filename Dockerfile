@@ -2,8 +2,10 @@ FROM openjdk:8-jdk
 
 ARG KOTLIN_NATIVE_VERSION=master
 
-RUN apt-get update && apt-get install -y \
-        libncurses-dev
+RUN apt-get update && apt-get install -yq \
+        libncurses-dev && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN git clone -b ${KOTLIN_NATIVE_VERSION} --single-branch --depth 1 https://github.com/JetBrains/kotlin-native.git && \
     cd /kotlin-native && ./gradlew wrapper --gradle-version 3.5 && \
     cd /kotlin-native && ./gradlew dependencies:update && \

@@ -13,9 +13,12 @@ RUN git clone -b ${KOTLIN_NATIVE_VERSION} --single-branch --depth 1 https://gith
     mkdir -p /opt/kotlin-native/ && \
     cp -R /kotlin-native/dist/* /opt/kotlin-native && \
     chmod 755 ${pkgdir}/opt/kotlin-native && \
-    ln -s /opt/kotlin-native/bin/kotlinc-native /usr/bin/kotlinc-native && \
-    ln -s /opt/kotlin-native/bin/konanc /usr/bin/konanc && \
     ln -s /opt/kotlin-native/bin/cinterop /usr/bin/cinterop && \
+    ln -s /opt/kotlin-native/bin/klib /usr/bin/klib && \
+    ln -s /opt/kotlin-native/bin/konanc /usr/bin/konanc && \
+    ln -s /opt/kotlin-native/bin/kotlinc /usr/bin/kotlinc && \
+    ln -s /opt/kotlin-native/bin/kotlinc-native /usr/bin/kotlinc-native && \
+    ln -s /opt/kotlin-native/bin/run_konan /usr/bin/run_konan && \
     rm -rf /kotlin-native && \
     rm -rf /root/.gradle && \
     rm -rf /root/.konan && \
